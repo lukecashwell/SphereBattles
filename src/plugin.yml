@@ -1,0 +1,9 @@
+main: com.spherebattles.main.Main
+version: 1.0
+name: SphereBattles
+api-version: 1.15
+
+commands:
+  Reset:
+    description: test command
+    aliases: []
