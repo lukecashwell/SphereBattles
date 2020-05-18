@@ -9,27 +9,34 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.spherebattles.commands.CommandRegestry;
-import com.spherebattles.events.EventRegestry;
+import com.spherebattles.commands.CommandRegistry;
+import com.spherebattles.events.EventRegistry;
 
 
 public class Main extends JavaPlugin {
 	
-	public static JavaPlugin plugin;
-	public static File dataFile;
+	private static Main plugin;
+	
+	public File dataFile;
 	
 	
 	@Override
 	public void onEnable() {	
-		new EventRegestry(this);
-		new CommandRegestry(this);
+		this.dataFile = this.getDataFolder();
+		
+		new EventRegistry(this);
+		new CommandRegistry(this);
+		
 		Main.plugin = this;	
-		Main.dataFile = this.getDataFolder();
 	}
 	
 	@Override
 	public void onDisable() { 
 		
+	}
+	
+	public static Main getInstance() {
+		return Main.plugin;
 	}
 	
 }

@@ -15,7 +15,7 @@ import org.bukkit.inventory.ItemStack;
 public class OnBlockDamage implements Listener {
 
 	@EventHandler
-	public void blockDamager(BlockDamageEvent event) {
+	public void blockDamage(BlockDamageEvent event) {
 		
 	}
 }

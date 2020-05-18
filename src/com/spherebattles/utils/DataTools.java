@@ -108,14 +108,14 @@ public class DataTools {
    public static NBTTagCompound readNBTFile(String file) {
 	   NBTTagCompound nbt = null;
 	   try{
-		   nbt = read(new File(Main.dataFile, file));			   
+		   nbt = read(new File(Main.getInstance().dataFile, file));			   
 	   } catch (Exception e) { System.err.println("[SB] -> Unable to read file: '" + file + "'");}
 	   return nbt;
 			   
    }
    
    public static void writeNBTFile(String fileName, NBTTagCompound tag) {
-	   File file = new File(Main.dataFile, fileName);
+	   File file = new File(Main.getInstance().dataFile, fileName);
 	   if(!file.exists()) {
 		   file.getParentFile().mkdirs();
 		   try {
