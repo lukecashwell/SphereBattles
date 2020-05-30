@@ -12,8 +12,21 @@ public class EventRegistry {
 		register(OnBlockBreak.class);	
 		register(OnBlockPlace.class);	
 		register(OnBlockDamage.class);	
-		register(OnBlockPhysicsUpdate.class);	
+		register(OnBlockPhysicsUpdate.class);
+		register(OnEntityChangeBlock.class);
 		register(OnServerLoad.class);	
+		register(OnPlayerChat.class);	
+		register(OnPlayerJoin.class);	
+		register(OnPlayerLeave.class);	
+		register(OnPlayerRespawn.class);	
+		register(OnPlayerDamage.class);
+		register(OnPlayerEnterNether.class);
+		register(OnPlayerDropItem.class);
+		
+		OnServerTick tick = new OnServerTick();
+		Bukkit.getScheduler().runTaskTimer(plugin,() -> {
+			tick.onTick();
+		}, 1, 1);
 	}	
 	
 	public void register(Class<? extends Listener> listener) {

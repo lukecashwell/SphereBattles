@@ -109,7 +109,10 @@ public class DataTools {
 	   NBTTagCompound nbt = null;
 	   try{
 		   nbt = read(new File(Main.getInstance().dataFile, file));			   
-	   } catch (Exception e) { System.err.println("[SB] -> Unable to read file: '" + file + "'");}
+	   } catch (Exception e) { e.printStackTrace(); System.err.println("[SB] -> Unable to read file: '" + file + "'");}
+	   if(nbt == null) {
+		   nbt = new NBTTagCompound();
+	   }
 	   return nbt;
 			   
    }
@@ -139,7 +142,7 @@ public class DataTools {
 
          NBTTagCompound nbttagcompound;
          try {
-            nbttagcompound = read(datainputstream);
+            nbttagcompound = readCompressed(datainputstream);
          } finally {
             datainputstream.close();
          }

@@ -4,6 +4,7 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -113,7 +114,10 @@ public class NBTTagStringArray extends NBTTagCollection<NBTTagString> {
    }
 
    public List<String> getAsStringList() {
-	   List<String> list = Arrays.asList(this.data);   
+	   List<String> list = new ArrayList<>();
+	   for(String string : this.data) {
+		   list.add(string);
+	   }
 	   return list;
    }
    

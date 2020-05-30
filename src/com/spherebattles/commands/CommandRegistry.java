@@ -9,6 +9,11 @@ public class CommandRegistry {
 	
 	public void registerEvents() {   
 		register(ResetCommand.class, "Reset");
+		register(WorldCommand.class, "World");
+		register(RankCommand.class, "Rank");
+		register(ListPlayers.class, "List");
+		register(SetTagCommand.class, "Settag");
+		
 	}	
 	
 	public void register(Class<? extends CommandExecutor> listener, String name) {

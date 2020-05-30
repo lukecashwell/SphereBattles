@@ -16,6 +16,9 @@ public class OnBlockPhysicsUpdate implements Listener {
 
 	@EventHandler
 	public void blockUpdate(BlockPhysicsEvent event) {
-		
+		Material mat = event.getBlock().getType();
+		if(mat.equals(Material.SAND) || mat.equals(Material.GRAVEL)) {
+			event.setCancelled(true);
+		}
 	}
 }

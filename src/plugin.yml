@@ -7,3 +7,15 @@ commands:
   Reset:
     description: test command
     aliases: []
+  Rank:
+    description: sets the player's rank
+    aliases: []
+  World:
+    description: allows travel between worlds
+    aliases: []
+  Settag:
+    description: sets a player's tag
+    aliases: []
+  List:
+    description: nothing
+    aliases: []

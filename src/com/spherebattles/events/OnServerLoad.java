@@ -9,6 +9,6 @@ public class OnServerLoad implements Listener {
 
 	@EventHandler
 	public void serverLoad(ServerLoadEvent event) {
-	
+		
 	}
 }
